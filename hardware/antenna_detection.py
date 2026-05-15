@@ -1,20 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Detección de antenas físicas mediante medición de return loss.
-
-Return loss (pérdida de retorno) es la relación en dB entre la potencia
-enviada a la antena y la potencia reflejada de vuelta.
-    - Antena bien conectada: return loss alto (≥ 8 dB típicamente).
-    - Puerto sin antena:      return loss bajo o cero.
-
-El YR8900 expone el comando GET_RF_PORT_RETURN_LOSS (0x7E) que mide
-el return loss en el puerto activo a una frecuencia dada (0x21 = 915 MHz).
-
-Uso típico al iniciar una zona:
-    detector = AntennaDetector(protocol)
-    results  = detector.scan_all_ports(range(1, 5))  # puertos 1-4
-    connected = [p for p, (ok, _) in results.items() if ok]
+Detección de antenas físicas usando return loss
+timing_system/hardware/antenna_detection.py
 """
 
 import time
